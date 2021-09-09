@@ -32,11 +32,14 @@ export default class Contador extends Component {
             <div className="Contador">
                 <h2>Contador</h2>
                 <h3>Valor Atual: <span className="valor">{this.state.numero}</span></h3>
-                <input type="number" value={this.state.passo} onChange={this.setPasso}/>
                 <div className="button-mais-menos">
                     <button onClick={this.dec}>-</button>
                     <button onClick={this.inc}>+</button>
                 </div>
+                <label className="consulta-passo">
+                    <label htmlFor="passo">Passo:</label>
+                    <input id="passo" type="number" value={this.state.passo} onChange={this.setPasso}/>
+                </label>
             </div>
         )
     }
