@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './Contador.css'
 
 export default class Contador extends Component {
     
@@ -28,12 +29,14 @@ export default class Contador extends Component {
 
     render() {
         return (
-            <div>
+            <div className="Contador">
                 <h2>Contador</h2>
-                <h3>Valor Atual: {this.state.numero}</h3>
+                <h3>Valor Atual: <span className="valor">{this.state.numero}</span></h3>
                 <input type="number" value={this.state.passo} onChange={this.setPasso}/>
-                <button onClick={this.dec}>-</button>
-                <button onClick={this.inc}>+</button>
+                <div className="button-mais-menos">
+                    <button onClick={this.dec}>-</button>
+                    <button onClick={this.inc}>+</button>
+                </div>
             </div>
         )
     }
