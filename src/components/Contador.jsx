@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import './Contador.css'
 
+import Display from './Display';
+import PassoCampo from './PassoCampo';
+import Botoes from './Botoes';
+
 export default class Contador extends Component {
     
     state = {
@@ -31,15 +35,9 @@ export default class Contador extends Component {
         return (
             <div className="Contador">
                 <h2>Contador</h2>
-                <h3>Valor Atual: <span className="valor">{this.state.numero}</span></h3>
-                <div className="button-mais-menos">
-                    <button onClick={this.dec}>-</button>
-                    <button onClick={this.inc}>+</button>
-                </div>
-                <label className="consulta-passo">
-                    <label htmlFor="passo">Passo:</label>
-                    <input id="passo" type="number" value={this.state.passo} onChange={this.setPasso}/>
-                </label>
+                <Display valor={this.state.numero} />
+                <Botoes inc={this.inc} dec={this.dec} />
+                <PassoCampo passo={this.state.passo} setPasso={this.setPasso}/>
             </div>
         )
     }
