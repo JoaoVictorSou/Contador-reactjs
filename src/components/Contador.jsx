@@ -25,9 +25,9 @@ export default class Contador extends Component {
         });
     }
 
-    setPasso = (e) => {
+    setPasso = (novoPasso) => {
         this.setState({
-            passo: +e.target.value,
+            passo: novoPasso,
         })
     }
 
@@ -36,7 +36,7 @@ export default class Contador extends Component {
             <div className="Contador">
                 <h2>Contador</h2>
                 <Display valor={this.state.numero} />
-                <Botoes inc={this.inc} dec={this.dec} />
+                <Botoes setInc={this.inc} setDec={this.dec} />
                 <PassoCampo passo={this.state.passo} setPasso={this.setPasso}/>
             </div>
         )
